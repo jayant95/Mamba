@@ -1,3 +1,10 @@
+/* IMPORT FONT */
+@font-face {
+    font-family: mambaFont;
+    src: url(../fonts/Cubadak.ttf);
+  } 
+
+/* ALL PAGES */
 input {
     box-sizing: border-box;
   }
@@ -5,10 +12,263 @@ input {
 html {
     scroll-behavior: smooth;
 }
-  
-  /* ALL PAGES */
-  body {
+
+body {
     margin: 0;
     padding: 0;
     font-family: Bahnschrift, Helvetica;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.content-wrapper {
+    margin: 0 auto;
+    max-width: 100%;
+    padding-bottom: 2rem;
+    padding-top: 3rem;
+}
+
+/* NAV BAR */
+.top-banner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: white;
+    background-color: black;
+    padding: 2rem;
+    padding-bottom: 1rem;
+    /* border-bottom: 1px solid rgb(100, 100, 100); */
+}
+  
+.site-title, .profile-links {
+    flex: 1;
+}
+
+.site-logo {
+    width: 60px;
+}
+
+.site-title h1 {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    font-family: mambaFont;
+    letter-spacing: 1px;
+}
+
+.profile-links {
+    text-align: end;
+}
+
+.profile-links li {
+    display: inline-block;
+}
+
+.profile-links li:nth-child(2) {
+    margin-left: 1rem;
+}
+
+.nav-links {
+    padding: 0;
+}
+
+
+/* LOGIN WRAPPER */
+.login-wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.login-header {
+    padding: 1rem;
+    text-align: center;
+    margin: 0 auto;
+    color: white;
+    /* padding-bottom: 2rem; */
+    font-size: 1.5rem;
   }
+
+  .wrap-login {
+    width: 450px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    overflow: hidden;
+    padding: 1rem;
+    z-index: 2;
+    /* border: 1px solid rgb(50, 50, 50); */
+  }
+
+.login-form {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: white;
+  }
+
+.wrap-input {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    padding-bottom: 1rem;
+}
+
+.wrap-input.small {
+    width: 45%;
+}
+
+.input-label {
+    display: block;
+    color: white;
+    padding-bottom: 0.3rem;
+}
+  
+.input-label.small {
+    display: block;
+    font-size: 0.6rem;
+}
+
+.form-input {
+    width: 100%;
+    font-size: 1rem;
+    border: 1px solid black;
+    padding: 0.5rem 1.5rem;
+    border-radius: 3px;
+    background-color: rgba(30, 30, 30, 0.5);
+    color: rgb(253, 184, 39);
+}  
+
+.container-login {
+    width: 100%;  
+    min-height: 80vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.background-image.home {
+    background-image: url('../img/background3.png');
+    margin-left: 0px;
+}
+
+.background-image.login {
+    background-image: url('../img/background2.png');
+}
+
+.background-image.register {
+    background-image: url('../img/background4.png');
+}
+
+.background-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+  
+.container-login100::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;  
+}
+  
+.overlay:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.login-form-btn {
+    width: 100%;
+}
+  
+.login-button {
+    display: block;
+    font-size: 1rem;
+    color: #fff;
+    text-transform: uppercase;
+    border: 0;
+    width: 100%;
+    height: 50px;
+    background:rgb(84, 37, 131);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+/* REGISTER */
+.register-header {
+    width: 100%;
+}
+
+.register-link {
+    color: rgb(253, 184, 39);
+}
+
+/* FOOTER.PHP */
+.footer {
+    background-color: black;
+    height: 60px;
+}
+
+/* INDEX PAGE */
+.welcome-header {
+    color: white;
+    text-align: center;
+
+}
+  
+.welcome-header h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-family: mambaFont;
+}
+  
+.welcome-header h2 {
+    font-size: 2rem;
+}
+  
+.welcome-header h3{
+    font-size: 1.5rem;
+}
+

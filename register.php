@@ -1,7 +1,7 @@
 <?php
     session_start();
     require("includes/header.php");
-    
+
     $user = [];
     $user['first-name'] = "";
     $user['last-name'] = "";
@@ -94,11 +94,12 @@
 
 
 <div class="login-wrapper">
-  <div class="container-login background-image overlay">
+  <div class="container-login background-image register overlay">
 			<div class="wrap-login">
 		<form class="login-form" action<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?> method="post">
-          <h3 class="login-header">Register</h3>
-
+          <div class="register-header">
+            <h3 class="login-header">Register</h3>
+        </div>
           <?php
             // Show validation errors
             if (!empty($errors)) {
@@ -111,22 +112,22 @@
               echo "</div>";
             }
           ?>
-		<div class="wrap-input">
+		<div class="wrap-input small">
           <label class="input-label">First Name</label>
 						<input class="form-input" type="text" name="first-name" placeholder="Bob" value="<?php echo $user['first-name'] ?>">
 					</div>
 
-					<div class="wrap-input">
+		<div class="wrap-input small">
             <label class="input-label">Last Name</label>
 						<input class="form-input" type="text" name="last-name" placeholder="Smith" value="<?php echo $user['last-name'] ?>">
           </div>
           
-          <div class="wrap-input">
+          <div class="wrap-input small">
             <label class="input-label">Email</label>
 						<input class="form-input" type="text" name="email" placeholder="abc@abc.com" value="<?php echo $user['email'] ?>">
           </div>
           
-          <div class="wrap-input">
+          <div class="wrap-input small">
             <label class="input-label">Username</label>
 						<input class="form-input" type="text" name="username" placeholder="Bobby007" value="<?php echo $user['username'] ?>">
 					</div>

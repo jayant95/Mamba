@@ -27,7 +27,7 @@
 ?>
 
   <div class="login-wrapper">
-    <div class="container-login background-image overlay">
+    <div class="container-login background-image login overlay">
 	    <div class="wrap-login">
 		    <form class="login-form" action="", method="POST">
                 <h3 class="login-header">Login</h3>
