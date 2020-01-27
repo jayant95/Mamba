@@ -113,9 +113,9 @@
             }
           ?>
 		<div class="wrap-input small">
-          <label class="input-label">First Name</label>
-						<input class="form-input" type="text" name="first-name" placeholder="Bob" value="<?php echo $user['first-name'] ?>">
-					</div>
+            <label class="input-label">First Name</label>
+		    <input class="form-input" type="text" name="first-name" placeholder="Bob" value="<?php echo $user['first-name'] ?>">
+		</div>
 
 		<div class="wrap-input small">
             <label class="input-label">Last Name</label>

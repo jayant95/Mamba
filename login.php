@@ -56,7 +56,6 @@
 				</div>
 
 				<div class="login-form-link">
-					<a class="register-link" href="reset-password.php">Forgot your password?</a>
 					<p>Not a member? <a class="register-link" href="register.php">Sign up here</a></p>
 				</div>
     		</form>
