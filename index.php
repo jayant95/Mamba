@@ -51,7 +51,8 @@
                         $storyUser = $row['username'];
                         $storyContent = $row['story'];
                         $storyHeart = $row['heart'];
-                        $storyDivID = 'story_' . $row['storyID'];
+                        $id = $row['storyID'];
+                        $storyDivID = 'topStory_' . $id;
 
                         $shortenedStory = strip_tags($storyContent);
                         
@@ -61,7 +62,7 @@
                             $endPoint = strrpos($storyCut, ' ');
 
                             $shortenedStory = $endPoint ? substr($storyCut, 0, $endPoint) : substr($storyCut, 0);
-                            $shortenedStory .= "... <a class='read-more-link' href='#'>read more</a>";
+                            $shortenedStory .= "... <a href='readStory.php?storyID=".$id."' class='read-more-link' href='#'>read more</a>";
                         }
 
                         echo "<div class='top-post' id=".$storyDivID.">";
@@ -139,7 +140,18 @@
                 $heart = $row['heart'];
                 $date = date("F j, Y", $time);
                 $storyID = $row['storyID'];
-                $storyDivID = 'story_' . $row['storyID'];
+                $storyDivID = 'story_' . $storyID;
+
+                $shortenedStory = strip_tags($story);
+                        
+                if (strlen($shortenedStory) > 300) {
+                    // truncate string
+                    $storyCut = substr($shortenedStory, 0, 300);
+                    $endPoint = strrpos($storyCut, ' ');
+
+                    $shortenedStory = $endPoint ? substr($storyCut, 0, $endPoint) : substr($storyCut, 0);
+                    $shortenedStory .= "... <a href='readStory.php?storyID=".$storyID."' class='read-more-link' href='#'>read more</a>";
+                }
 
                 echo "<div class='story-post' id='" . $storyDivID . "'>";
                     echo "<div class='story-title'>";
@@ -157,7 +169,7 @@
                     echo "</div>";
                 
                     echo "<div class='story-content'>";
-                        echo "<p>" . nl2br($story) . "</p>";
+                        echo "<p>" . nl2br($shortenedStory) . "</p>";
                     echo "</div>";
                     echo "<div class='add-heart'>";
                     if (in_array($storyID, $heartedStoriesID)) {

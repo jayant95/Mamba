@@ -35,4 +35,24 @@
         header("Location: index.php#story");
     }
 
+    function getHeartedStories($storyID, $connection) {
+        $heartedStoriesID = [];
+        if (isset($_SESSION['username'])) {
+            $sql = "SELECT storyID FROM hearts WHERE memberID = ?";
+            if ($stmt = $connection->prepare($sql)) {
+                $stmt->bind_param('i', $_SESSION['memberID']);
+                $stmt->execute();
+
+                $result = $stmt->get_result();
+
+                while ($row = $result->fetch_assoc()) {
+                    $heartedStoriesID[] = $row['storyID'];
+                }
+            }
+            $stmt->close();
+        }
+
+        return $heartedStoriesID;
+    }
+
 ?>

@@ -186,6 +186,14 @@ ul {
     background-image: url("../img/background5.png");
 }
 
+.background-image.read-story {
+    background-image: url("../img/background6.png");
+}
+
+.background-image.profile {
+    background-image: url("../img/background7.png");
+}
+
 .container-login.story {
     min-height: 100vh;
 }
@@ -483,4 +491,30 @@ ul {
 
 .post-story-header {
     text-align: center;
+}
+
+
+/* READSTORY.PHP */
+
+.story-post.separate-page {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    z-index: 2;
+}
+
+
+/* PROFILE.PHP */
+
+.profile-user {
+    z-index: 2;
+    color: white;
+    width: 80%;
+}
+
+.profile-user-posts {
+    text-align: center;
+}
+
+.story-post.profile-page {
+    background-color: rgba(0, 0, 0, 0.5);
 }

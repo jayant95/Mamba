@@ -17,8 +17,6 @@ let addHeart = (parentID) => {
     heartButton.children[0].style.marginLeft = 0;
     heartButton.children[0].src = "img/heart_clicked.png";
     heartButton.classList.add("clicked");
-    heartClass.onclick = null;
-    console.log(numHearts);
     
     sendXHR("GET", "includes/updateHearts.php?status=success&hearts=" + numHearts + "&id=" + parentID.id, null, function(response) {
         console.log(response);
