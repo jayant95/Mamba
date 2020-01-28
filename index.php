@@ -99,8 +99,25 @@
             <h2>Stories</h2>
         </div>
         <?php  
-            // If logged in retrieve the users hearted stories
+            // If logged in, retrieve the users hearted stories
             $heartedStoriesID = [];
+            $row_cnt = 0;
+            // Get total number of records from table
+            $sql = "SELECT * FROM story";
+            if ($result = $connection->query($sql)) {
+                $row_cnt = $result->num_rows;
+                $result->close();
+            }
+
+            // Check if page num is specified, if not, return default page (1)
+            $page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
+
+            // Num results to show per page
+            $num_results_on_page = 5;
+
+
+           // $start_from = ($pn-1) * $limit;
+
             if (isset($_SESSION['username'])) {
                 $sql = "SELECT storyID FROM hearts WHERE memberID = ?";
                 if ($stmt = $connection->prepare($sql)) {
@@ -117,7 +134,12 @@
                 $stmt->close();
             }
 
-            if ($stmt = $connection->prepare('SELECT storyID, timestamp, username, title, story, heart FROM story ORDER BY timestamp DESC')) {
+            $sql = "SELECT storyID, timestamp, username, title, story, heart FROM story ORDER BY timestamp DESC LIMIT ?,?";
+
+            if ($stmt = $connection->prepare($sql)) {
+                // Calculate the page to get results
+                $calc_page = ($page - 1) * $num_results_on_page;
+                $stmt->bind_param('ii', $calc_page, $num_results_on_page);
                 $stmt->execute();
             } else {
                 $error = $connection->errno . ' ' . $connection->error;
@@ -144,9 +166,9 @@
 
                 $shortenedStory = strip_tags($story);
                         
-                if (strlen($shortenedStory) > 300) {
+                if (strlen($shortenedStory) > 400) {
                     // truncate string
-                    $storyCut = substr($shortenedStory, 0, 300);
+                    $storyCut = substr($shortenedStory, 0, 400);
                     $endPoint = strrpos($storyCut, ' ');
 
                     $shortenedStory = $endPoint ? substr($storyCut, 0, $endPoint) : substr($storyCut, 0);
@@ -192,9 +214,41 @@
                     }
                     echo "</div>";
                 echo "</div>";
-            }
-            
+            } 
         ?>
+
+        <?php if (ceil($row_cnt / $num_results_on_page) > 0): ?>
+            <ul class="pagination">
+                <?php if ($page > 1): ?>
+                    <li class="prev"><a href="index.php?page=<?php echo $page-1 ?>">Prev</a></li>
+                <?php endif; ?>
+
+                <?php if ($page > 3): ?>
+                    <li class="start"><a href="index.php?page1">1</a></li>
+                    <li class="dots">...</li>
+                <?php endif; ?>
+
+                <?php if ($page-2 > 0): ?><li class="page"><a href="index.php?page=<?php echo $page-2 ?>"><?php echo $page-2 ?></a></li><?php endif; ?>
+                <?php if ($page-1 > 0): ?><li class="page"><a href="index.php?page=<?php echo $page-1 ?>"><?php echo $page-1 ?></a></li><?php endif; ?>
+
+                <li class="currentpage"><a href="index.php?page=<?php echo $page ?>"><?php echo $page ?></a></li>
+
+                <?php if ($page+1 < ceil($row_cnt / $num_results_on_page)+1): ?><li class="page"><a href="index.php?page=<?php echo $page+1 ?>"><?php echo $page+1 ?></a></li><?php endif; ?>
+                <?php if ($page+2 < ceil($row_cnt / $num_results_on_page)+1): ?><li class="page"><a href="index.php?page=<?php echo $page+2 ?>"><?php echo $page+2 ?></a></li><?php endif; ?>
+
+                <?php if ($page < ceil($row_cnt / $num_results_on_page)-2): ?>
+                    <li class="dots">...</li>
+                    <li class="end"><a href="index.php?page=<?php echo ceil($row_cnt / $num_results_on_page) ?>"><?php echo ceil($row_cnt / $num_results_on_page) ?></a></li>
+                <?php endif; ?>
+
+                <?php if ($page < ceil($row_cnt / $num_results_on_page)): ?>
+                    <li class="next"><a href="index.php?page=<?php echo $page+1 ?>">Next</a></li>
+                <?php endif; ?>
+            </ul>
+                
+        <?php endif; ?>
+            
+
     </div>
 </div>
 
