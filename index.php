@@ -65,7 +65,13 @@
                         }
 
                         echo "<div class='top-post' id=".$storyDivID.">";
-                        echo "<h3>" . $storyTitle . "</h3>";
+                        echo "<div class='story-heading'>";
+                            echo "<h3>" . $storyTitle . "</h3>";
+                            echo "<div class='hearts'>";
+                                echo "<img src='img/heart.png' alt='heart icon'>";
+                                echo "<p class='heart-number'>" . $storyHeart . "</p>";
+                            echo "</div>";
+                        echo "</div>";
                         echo "<h4>" . $storyUser . "</h4>";
                         echo "<p>" . $shortenedStory . "</p>";
                         echo "</div>";

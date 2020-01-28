@@ -5,9 +5,9 @@
   } 
 
 /* ALL PAGES */
-input {
+input, textarea {
     box-sizing: border-box;
-  }
+}
   
 html {
     scroll-behavior: smooth;
@@ -466,7 +466,7 @@ ul {
 /* STORY.PHP  */
 
 .user-comment {
-    width: 700px;
+    width: 70%;
     padding: 2rem;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.5);
@@ -478,7 +478,6 @@ ul {
 }
 
 .wrap-input.textarea textarea {
-    width: 650px;
     height: 300px;
 }
 
