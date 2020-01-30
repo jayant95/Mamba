@@ -184,6 +184,12 @@ ul {
     color: rgb(253, 184, 39);
 }  
 
+.form-input option {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+
+
 .container-login {
     width: 100%;  
     min-height: 80vh;
@@ -269,7 +275,7 @@ ul {
     width: 100%;
 }
   
-.login-button, .story-submit-button {
+.login-button, .story-submit-button, .save-button, .edit-button {
     display: block;
     font-size: 1rem;
     color: #fff;
@@ -294,7 +300,17 @@ ul {
     margin-bottom: 1rem;
 }
 
-.login-button:hover, .story-submit-button:hover {
+.save-button {
+    width: 20%;
+    float: right;
+    margin-top: 1rem;
+}
+
+.edit-button {
+    width: 20%;
+}
+
+.login-button:hover, .story-submit-button:hover, .save-button:hover, .edit-button:hover {
     border: 2px solid rgb(253, 184, 39);
     color: rgb(253, 184, 39);
 }
@@ -323,7 +339,7 @@ ul {
 /* INDEX.PHP */
 
 .wrap-login.homepage {
-    width: 70%;
+    width: 60%;
 }
 
 .welcome-header {
@@ -583,6 +599,7 @@ ul {
     color: white;
     width: 100%;
     margin-bottom: 3rem;
+    margin-top: 3rem;
 }
 
 .profile-user-posts {
@@ -591,6 +608,22 @@ ul {
 
 .story-post.profile-page {
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+.profile-country {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+}
+
+.set-country-form {
+    width: 50%;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.set-country-form label, .set-country-form p{
+    margin-top: 1rem
 }
 
 

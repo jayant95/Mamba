@@ -6,9 +6,10 @@
 <div class="login-wrapper">
     <div class="container-login background-image about-page overlay">
         <div class="about-container">
-            <h2>What is this?</h2>
+            <h2>How it Works</h2>
             <p>
-                MambaAndMe is a space to share and celebrate the ways that Kobe inspired each of us. We invite you to share your story on the influence and impact Kobe and the Mamba Mentality has had on your life. 
+            MambaAndMe is a collection of short stories inspired by Kobe Bryant. Read and share stories you’re interested in, from around the world! <br /><br />
+Simply sign up for an account, then feel free to write your story and send “hearts” to other authors! We invite you to share your story on the influence and impact Kobe and the Mamba Mentality has had on you. 
             </p>
 
             <br />

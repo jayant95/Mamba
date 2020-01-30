@@ -23,8 +23,8 @@ function isExistingUser($data, $connection, $column) {
   function registerNewUser($user, $connection) {
     $hashed_password = password_hash($user['password'], PASSWORD_BCRYPT);
 
-    $stmt = $connection->prepare('INSERT INTO members (firstName, lastName, email, username, password) VALUES (?, ?, ?, ?, ?)');
-    $stmt->bind_param('sssss', $user['first-name'], $user['last-name'], $user['email'], $user['username'], $hashed_password);
+    $stmt = $connection->prepare('INSERT INTO members (firstName, lastName, email, country, username, password) VALUES (?, ?, ?, ?, ?, ?)');
+    $stmt->bind_param('ssssss', $user['first-name'], $user['last-name'], $user['email'], $user['country'], $user['username'], $hashed_password);
 
     $stmt->execute();
     $result = $stmt->get_result();

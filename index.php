@@ -22,8 +22,8 @@
     <div class="container-login background-image home overlay homepage">
         <div class="wrap-login homepage">
             <div class="welcome-header">
-                <h1>"Everything negative – pressure, challenges – is all an opportunity for me to rise."</h1>
-                <h3>How Kobe Bryant inspired us. Stories from around the world</h3>
+                <h1>Short stories inspired by Kobe Bryant, from fans around the world.</h1>
+                <h3>"Everything negative – pressure, challenges – is all an opportunity for me to rise." - Kobe Bryant</h3>
             </div>
         </div>
     </div>
@@ -34,7 +34,7 @@
                 <h2>Popular Stories</h2>
             </div>
             <?php
-                $sql = "SELECT storyID, username, title, story, heart FROM story ORDER BY heart DESC LIMIT 3";
+                $sql = "SELECT storyID, username, title, story, heart, country FROM story ORDER BY heart DESC LIMIT 3";
                 
                 if ($stmt = $connection->prepare($sql)) {
                     $stmt->execute();
@@ -52,6 +52,7 @@
                         $storyContent = $row['story'];
                         $storyHeart = $row['heart'];
                         $id = $row['storyID'];
+                        $storyCountry = $row['country'];
                         $storyDivID = 'topStory_' . $id;
 
                         $shortenedStory = strip_tags($storyContent);
@@ -73,7 +74,7 @@
                                 echo "<p class='heart-number'>" . $storyHeart . "</p>";
                             echo "</div>";
                         echo "</div>";
-                        echo "<h4>" . $storyUser . "</h4>";
+                        echo "<h4>" . $storyUser . " | " . $storyCountry . "</h4>";
                         echo "<p>" . $shortenedStory . "</p>";
                         echo "</div>";
                         
@@ -131,10 +132,10 @@
                     }
                 }
 
-                $stmt->close();
+                // $stmt->close();
             }
 
-            $sql = "SELECT storyID, timestamp, username, title, story, heart FROM story ORDER BY timestamp DESC LIMIT ?,?";
+            $sql = "SELECT storyID, timestamp, username, title, story, heart, country FROM story ORDER BY timestamp DESC LIMIT ?,?";
 
             if ($stmt = $connection->prepare($sql)) {
                 // Calculate the page to get results
@@ -160,6 +161,7 @@
                 $title = $row['title'];
                 $story = $row['story'];
                 $heart = $row['heart'];
+                $storyCountry = $row['country'];
                 $date = date("F j, Y", $time);
                 $storyID = $row['storyID'];
                 $storyDivID = 'story_' . $storyID;
@@ -185,7 +187,7 @@
                             echo "</div>";
                         echo "</div>";
                         echo "<div class='story-metadata'>";
-                            echo "<p>" . $username . "</p>";
+                            echo "<p>" . $username . " | " . $storyCountry . "</p>";
                             echo "<p>" . $date . "</p>";
                         echo "</div>";                        
                     echo "</div>";

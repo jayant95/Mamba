@@ -16,6 +16,12 @@ if (isset($_SESSION['username'])) {
         if (empty($errors)) {
             require_once("includes/story_helper.php");
             require_once("includes/db_connection.php");
+            
+            // Get country of user 
+            require_once("includes/geo_country.php");
+            $country = "";
+            $country = getCountryFromDB($_SESSION['memberID'], $connection);
+            $data['country'] = $country;
             postStory($data, $connection);
     
             header("Location: index.php#story");

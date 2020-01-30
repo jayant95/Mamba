@@ -15,7 +15,7 @@
         $heartedStories = [];
         $heartedStoriesID = getHeartedStories($storyID, $connection);
 
-        $sql = "SELECT timestamp, username, title, story, heart FROM story WHERE storyID = ?";
+        $sql = "SELECT timestamp, username, title, story, heart, country FROM story WHERE storyID = ?";
 
         if ($stmt = $connection->prepare($sql)) {
             $stmt->bind_param('i', $storyID);
@@ -33,6 +33,7 @@
                 $storyUser = $row['username'];
                 $storyContent = $row['story'];
                 $storyHeart = $row['heart'];
+                $storyCountry = $row['country'];
                 $date = $row['timestamp'];
                 $storyDate = date("F j, Y", $date);
 
@@ -48,7 +49,7 @@
                         echo "</div>";
                     echo "</div>";
                     echo "<div class='story-metadata'>";
-                        echo "<p>" . $storyUser . "</p>";
+                        echo "<p>" . $storyUser . " | " . $storyCountry . "</p>";
                         echo "<p>" . $storyDate . "</p>";
                     echo "</div>";                        
                 echo "</div>";
