@@ -24,7 +24,7 @@
         $date = time();
 
         $stmt = $connection->prepare('INSERT INTO story (memberID, timestamp, username, title, story, heart, country) VALUES (?, ?, ?, ?, ?, ?, ?)');
-        $stmt->bind_param('issssis', $_SESSION['memberID'], $date, $_SESSION['username'], $data['title'], $data['story'], $hearts, $data['country']);
+        $stmt->bind_param('issssis', $data['memberID'], $date, $data['username'], $data['title'], $data['story'], $hearts, $data['country']);
     
         $stmt->execute();
 

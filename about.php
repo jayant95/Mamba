@@ -43,7 +43,7 @@ Simply sign up for an account, then feel free to write your story and send “he
  
             <br/>
             <p>
-               Hand-coded in Seattle, Washington. Feel free to reach out and share feedback or say hi! I will leave my email and LinkedIn below.
+               Hand-coded with JavaScript, PHP, MySQL, HTML & CSS in Seattle, Washington. Feel free to reach out and share feedback or say hi! I will leave my email and LinkedIn below.
             </p>
 
 

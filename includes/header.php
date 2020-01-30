@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>MambaAndMe | Kobe Bryant | Inspirational Stories</title>
-    <meta charset="utf-8">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>MambaAndMe | Kobe Bryant | Inspirational Short Stories</title>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/mediaqueries.css">
-
-    <meta property="og:title" content="MambaAndMe - Inspirational Stories" />
-    <meta property="og:description" content="How Kobe inspired each of us." />
-    <meta property="og:image" content="img/promoteImage.png" />
-    <meta name="description" content="How Kobe Bryant inspired each of us. Stories from around the world.">
+    <link rel='icon' href='img/favicon.ico' type='image/x-icon'>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="MambaAndMe | Kobe Bryant | Inspirational Short Stories" />
+    <meta property="og:description" content="MambaAndMe is a collection of short stories inspired by Kobe Bryant. Read and share stories you’re interested in, from around the world!" />
+    <meta property="og:url" content="http://mambaandme.com/" />
+    <meta property="og:image" content="http://mambaandme.com/img/promoteImage.png" />
+    <meta property="og:site_name" content="MambaAndMe" />
+    <meta name="description" content="MambaAndMe is a collection of short stories inspired by Kobe Bryant. Read and share stories you’re interested in, from around the world!">
+    <meta property="og:image:secure_url" content="http://mambaandme.com/img/promoteImage.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MambaAndMe | Kobe Bryant | Inspirational Short Stories" />
+    <meta name="twitter:description" content="MambaAndMe is a collection of short stories inspired by Kobe Bryant. Read and share stories you’re interested in, from around the world!" />
+    <meta name="twitter:image" content="http://mambaandme.com/img/promoteImage.png" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157239014-1"></script>
     <script>
@@ -28,7 +36,7 @@
   <div class="top-banner">
     <div class="site-title">
       <!-- <img class="site-logo" src="img/site-logo.png"> -->
-      <!-- Add site logo here  -->
+      <!-- Add the site logo here  -->
       <h1><a href="index.php">MambaAndMe</a></h1>
     </div>
 
@@ -37,7 +45,7 @@
         <?php
           // Check if user is logged in
           if (empty($_SESSION['first-name'])) {
-            echo "<li><a href=\"login.php\">Log In</a></li>";
+            echo "<li><a href=\"login.php\">Login</a></li>";
             echo "<li><a href=\"register.php\">Register</a></li>";
             echo "<li><a href=\"about.php\">How it Works</a></li>";
             echo "<li><a href=\"story.php\">Write a Story</a></li>";
@@ -51,11 +59,3 @@
       </ul>
     </nav>
   </div>
-
-  <?php
-  // switch to HTTPS
-    if(!isset($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] != "on") {
-      header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"], true, 301);  
-      exit;
-    }
-  ?>
