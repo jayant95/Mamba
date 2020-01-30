@@ -22,28 +22,30 @@ if (isset($_SESSION['username'])) {
         }
     }
 } else {
-    header("Location: login.php");
+    header("Location: login.php?loggedin=false");
 }
-
-
 ?>
 
 
 <div class="login-wrapper">
     <div class="container-login background-image story overlay">
-        <form class="user-comment" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-            <div class="post-story-header">
-                <h2>Post your story</h2>
-            </div>
-            <div class="wrap-input">
-				<input class="form-input" type="text" name="title" placeholder="Title" />
-            </div>
-            <div class="wrap-input textarea">
-				<textarea class="form-input" name="story" placeholder="Write your story here..."></textarea>
-            </div>
-            <div class="user-submit-btn">
-                <input class="story-submit-button" type="submit" name="submit" value="Post" />
-			</div>
-        </form>
+        <div class="wrap-login write-story">
+            <form class="user-comment" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+                <div class="post-story-header">
+                    <h2>Post your story</h2>
+                </div>
+                <div class="wrap-input">
+                    <input class="form-input" type="text" name="title" placeholder="Title" />
+                </div>
+                <div class="wrap-input textarea">
+                    <textarea class="form-input" name="story" placeholder="Write your story here..."></textarea>
+                </div>
+                <div class="user-submit-btn">
+                    <input class="story-submit-button" type="submit" name="submit" value="Post" />
+                </div>
+            </form>
+        </div>
 	</div>
 </div>
+
+<?php require("includes/footer.php")  ?>

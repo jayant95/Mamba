@@ -85,7 +85,7 @@ if (isset($_SESSION['username'])) {
     $heartedStoriesID = [];
     $heartedStoriesID = getHeartedStories($storyID, $connection);
 
-    
+
 
 
 } else {
@@ -95,3 +95,5 @@ if (isset($_SESSION['username'])) {
 
   </div>
 </div>
+
+<?php require("includes/footer.php") ?>

@@ -2,9 +2,24 @@
 @font-face {
     font-family: mambaFont;
     src: url(../fonts/Cubadak.ttf);
-  } 
+} 
+
+@font-face {
+    font-family: NotoSans;
+    src: url(../fonts/NotoSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: Bahnschrift;
+    src: url(../fonts/BAHNSCHRIFT.TTF);
+}
 
 /* ALL PAGES */
+
+*, *::after, *::before{ /* star is select all ||| pseudo elements rednered after page?*/
+    box-sizing: border-box;
+  }
+
 input, textarea {
     box-sizing: border-box;
 }
@@ -13,7 +28,7 @@ html {
     scroll-behavior: smooth;
 }
 
-p {
+p, ul {
     margin: 0;
 }
 
@@ -39,6 +54,14 @@ ul {
     padding-top: 3rem;
 }
 
+.site-message {
+    text-align: center;
+    padding: 0.5rem;
+    color: rgb(253, 184, 39);
+    background-color: black;
+    border-bottom: 2px solid rgb(84, 37, 131);
+}
+
 /* NAV BAR */
 .top-banner {
     display: flex;
@@ -48,10 +71,10 @@ ul {
     background-color: black;
     padding: 2rem;
     padding-bottom: 1rem;
-    /* border-bottom: 1px solid rgb(100, 100, 100); */
+    border-bottom: 2px solid rgb(84, 37, 131)
 }
   
-.site-title, .profile-links {
+.profile-links {
     flex: 1;
 }
 
@@ -63,7 +86,6 @@ ul {
     display: inline-block;
     vertical-align: top;
     margin-top: 1rem;
-    margin-left: 1rem;
     font-family: mambaFont;
     letter-spacing: 1px;
 }
@@ -74,14 +96,22 @@ ul {
 
 .profile-links li {
     display: inline-block;
+    border-right: 1px solid rgb(84, 37, 131);
 }
 
-.profile-links li:nth-child(2) {
-    margin-left: 1rem;
+.profile-links li:last-child {
+    border: 0;
 }
 
 .nav-links {
     padding: 0;
+    margin-top: 1.7rem;
+    margin-right: 1rem;
+}
+
+.nav-links li {
+    padding: 0rem 1rem;
+    text-align: inherit;
 }
 
 
@@ -141,7 +171,7 @@ ul {
   
 .input-label.small {
     display: block;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
 }
 
 .form-input {
@@ -170,28 +200,32 @@ ul {
 }
 
 .background-image.home {
-    background-image: url('../img/background3.png');
+    background-image: url('../img/background_freethrow.jpg');
     margin-left: 0px;
 }
 
 .background-image.login {
-    background-image: url('../img/background2.png');
+    background-image: url('../img/background_swish.png');
 }
 
 .background-image.register {
-    background-image: url('../img/background4.png');
+    background-image: url('../img/background_swish_gold.png');
 }
 
 .background-image.story {
-    background-image: url("../img/background5.png");
+    background-image: url("../img/background_writing.png");
 }
 
 .background-image.read-story {
-    background-image: url("../img/background6.png");
+    background-image: url("../img/background_reading.png");
 }
 
 .background-image.profile {
-    background-image: url("../img/background7.png");
+    background-image: url("../img/background_mountains.png");
+}
+
+.background-image.about-page {
+    background-image: url("../img/background_mountains.png");
 }
 
 .container-login.story {
@@ -225,6 +259,10 @@ ul {
     display: block;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.6);
+}
+
+.overlay.homepage:before {
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .login-form-btn {
@@ -266,6 +304,11 @@ ul {
     width: 100%;
 }
 
+.dropdown option {
+    color: black;
+    background-color: white;
+}
+
 .register-link {
     color: rgb(253, 184, 39);
 }
@@ -274,12 +317,13 @@ ul {
 .footer {
     background-color: black;
     height: 60px;
+    border-top: 2px solid rgb(84, 37, 131);
 }
 
 /* INDEX.PHP */
 
 .wrap-login.homepage {
-    width: 600px;
+    width: 70%;
 }
 
 .welcome-header {
@@ -318,11 +362,17 @@ ul {
 
 .top-post {
     background-color: rgb(0, 0, 0);
-    padding: 0.8rem;
+    padding: 1.2rem;
     color: white;
     width: 30%;
     border-radius: 10px;
     border: 2px solid rgb(84, 37, 131);
+}
+
+.top-post p {
+    font-family: NotoSans;
+    line-height: 1.5rem;
+    font-size: 1.0rem;
 }
 
 .top-post h3 {
@@ -346,7 +396,17 @@ ul {
 
 .user-story {
     margin: 0 auto;
-    width: 83%;
+    width: 70%;
+}
+
+.post-story-btn {
+    background-color: rgba(40, 40, 40, 0.5);
+    transition: 0.3s;
+}
+
+.post-story-btn:hover {
+    border: 1px solid rgba(253, 184, 39, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .wrap-input.post {
@@ -379,17 +439,22 @@ ul {
     margin-bottom: 2rem;
 }
 
-.story-post {
-    width: 80%;
+.story-post, .about-container {
+    width: 70%;
     margin: 0 auto;
     border: 2px solid rgb(253, 184, 39);
     border-radius: 10px;
-    padding: 1rem;
+    padding: 2rem;
     margin-top: 2rem;
 }
 
 .story-title {
     display: flex;
+}
+
+.story-title-link h3 {
+    font-family: Bahnschrift;
+    font-size: 1.5rem;
 }
 
 .story-top {
@@ -413,6 +478,11 @@ ul {
 .story-metadata p:first-of-type {
     margin-top: 0;
     margin-bottom: 0.5rem;
+}
+
+.story-content {
+    font-family: NotoSans;
+    line-height: 1.5rem;
 }
 
 .hearts {
@@ -474,11 +544,12 @@ ul {
 /* STORY.PHP  */
 
 .user-comment {
-    width: 70%;
-    padding: 2rem;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
+}
+
+.wrap-login.write-story {
+    width: 80%;
 }
 
 .wrap-input.textarea {
@@ -496,10 +567,12 @@ ul {
 
 /* READSTORY.PHP */
 
-.story-post.separate-page {
+.story-post.separate-page, .about-container {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     z-index: 2;
+    margin-bottom: 2rem;
+    width: 60%;
 }
 
 
@@ -508,7 +581,8 @@ ul {
 .profile-user {
     z-index: 2;
     color: white;
-    width: 80%;
+    width: 100%;
+    margin-bottom: 3rem;
 }
 
 .profile-user-posts {
@@ -517,4 +591,80 @@ ul {
 
 .story-post.profile-page {
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/* FOOTER.PHP */
+
+.footer {
+    height: 70px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.footer p {
+    padding-top: 1.8rem;
+    font-size: 0.7rem;
+    padding-right: 1.5rem;
+    text-align: right;
+}
+
+
+/* ABOUT.PHP */
+
+.about-container {
+    margin-bottom: 3rem;
+}
+
+.about-container p {
+    font-family: NotoSans;
+    line-height: 1.5rem;
+}
+
+.about-container h2 {
+    text-align: center;
+}
+
+.in-text-link {
+    font-weight: bold;
+    color: rgb(253, 184, 39);
+}
+
+.contact-me {
+    display: flex;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.contact-me img {
+    margin-right: 0.3rem;
+    width: 10%;
+}
+
+.contact-link {
+    vertical-align: super;
+}
+
+.linkedin-contact img {
+    width: 13%;
+}
+
+
+/* PAGINATION */
+
+.pagination {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    padding: 2rem 0rem;
+    margin: 0 auto;
+}
+
+.pagination li {
+    width: 13%;
+    font-size: 1.2rem;
+}
+
+.prev {
+    margin-right: 1rem;
 }

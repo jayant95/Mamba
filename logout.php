@@ -7,5 +7,7 @@
   unset($_SESSION['username']);
   unset($_SESSION['email']);
   unset($_SESSION['redirect']);
+  unset($_SESSION['message']);
+  unset($_SESSION['memberID']);
   header("Location: index.php");
 ?>

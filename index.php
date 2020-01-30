@@ -19,11 +19,11 @@
 ?>
 
 <div class="page-background">
-    <div class="container-login background-image home overlay">
+    <div class="container-login background-image home overlay homepage">
         <div class="wrap-login homepage">
             <div class="welcome-header">
                 <h1>"Everything negative – pressure, challenges – is all an opportunity for me to rise."</h1>
-                <h3>Share your stories on how Kobe Bryant influenced and motivated your life</h3>
+                <h3>How Kobe Bryant inspired us. Stories from around the world</h3>
             </div>
         </div>
     </div>
@@ -31,7 +31,7 @@
     <div class="favourite-posts">
         <div class="top-posts-wrapper">
             <div class="top-post-header">
-                <h2>Top Stories</h2>
+                <h2>Popular Stories</h2>
             </div>
             <?php
                 $sql = "SELECT storyID, username, title, story, heart FROM story ORDER BY heart DESC LIMIT 3";
@@ -67,7 +67,7 @@
 
                         echo "<div class='top-post' id=".$storyDivID.">";
                         echo "<div class='story-heading'>";
-                            echo "<h3>" . $storyTitle . "</h3>";
+                            echo "<a class='story-title-link' href='readStory.php?storyID=".$id."'><h3>" . $storyTitle . "</h3></a>";
                             echo "<div class='hearts'>";
                                 echo "<img src='img/heart.png' alt='heart icon'>";
                                 echo "<p class='heart-number'>" . $storyHeart . "</p>";
@@ -88,7 +88,7 @@
         <form class="user-story">
             <div class="wrap-input post">
                 <a href="story.php">
-				    <input class="form-input" type="text" name="title" placeholder="Write your story here">
+				    <input class="form-input post-story-btn" type="text" name="title" placeholder="Write your story here...">
                 </a>
             </div>
         </form>
@@ -166,9 +166,9 @@
 
                 $shortenedStory = strip_tags($story);
                         
-                if (strlen($shortenedStory) > 400) {
+                if (strlen($shortenedStory) > 500) {
                     // truncate string
-                    $storyCut = substr($shortenedStory, 0, 400);
+                    $storyCut = substr($shortenedStory, 0, 500);
                     $endPoint = strrpos($storyCut, ' ');
 
                     $shortenedStory = $endPoint ? substr($storyCut, 0, $endPoint) : substr($storyCut, 0);
@@ -178,7 +178,7 @@
                 echo "<div class='story-post' id='" . $storyDivID . "'>";
                     echo "<div class='story-title'>";
                         echo "<div class='story-top'>";
-                            echo "<h3>" . $title . "</h3>";
+                            echo "<a class='story-title-link' href='readStory.php?storyID=".$storyID."'><h3>" . $title . "</h3></a>";
                             echo "<div class='hearts'>";
                             echo "<img src='img/heart.png' alt='heart icon'>";
                             echo "<p class='heart-number'>" . $heart . "</p>";
@@ -205,12 +205,11 @@
                                 echo "<img src='img/heart.png'>";
                             echo "</div>";
                         } else {
-                            echo "<a class='heart-button' href='login.php'>";
+                            echo "<a class='heart-button' href='login.php?loggedin=false'>";
                                 echo "<p>Send a </p>";
                                 echo "<img src='img/heart.png'>";
                             echo "</a>";
                         }
-
                     }
                     echo "</div>";
                 echo "</div>";
@@ -220,29 +219,29 @@
         <?php if (ceil($row_cnt / $num_results_on_page) > 0): ?>
             <ul class="pagination">
                 <?php if ($page > 1): ?>
-                    <li class="prev"><a href="index.php?page=<?php echo $page-1 ?>">Prev</a></li>
+                    <li class="prev"><a href="index.php?page=<?php echo $page-1 ?>#story">Prev</a></li>
                 <?php endif; ?>
 
                 <?php if ($page > 3): ?>
-                    <li class="start"><a href="index.php?page1">1</a></li>
+                    <li class="start"><a href="index.php?page1#story">1</a></li>
                     <li class="dots">...</li>
                 <?php endif; ?>
 
-                <?php if ($page-2 > 0): ?><li class="page"><a href="index.php?page=<?php echo $page-2 ?>"><?php echo $page-2 ?></a></li><?php endif; ?>
-                <?php if ($page-1 > 0): ?><li class="page"><a href="index.php?page=<?php echo $page-1 ?>"><?php echo $page-1 ?></a></li><?php endif; ?>
+                <?php if ($page-2 > 0): ?><li class="page"><a href="index.php?page=<?php echo $page-2 ?>#story"><?php echo $page-2 ?></a></li><?php endif; ?>
+                <?php if ($page-1 > 0): ?><li class="page"><a href="index.php?page=<?php echo $page-1 ?>#story"><?php echo $page-1 ?></a></li><?php endif; ?>
 
                 <li class="currentpage"><a href="index.php?page=<?php echo $page ?>"><?php echo $page ?></a></li>
 
-                <?php if ($page+1 < ceil($row_cnt / $num_results_on_page)+1): ?><li class="page"><a href="index.php?page=<?php echo $page+1 ?>"><?php echo $page+1 ?></a></li><?php endif; ?>
-                <?php if ($page+2 < ceil($row_cnt / $num_results_on_page)+1): ?><li class="page"><a href="index.php?page=<?php echo $page+2 ?>"><?php echo $page+2 ?></a></li><?php endif; ?>
+                <?php if ($page+1 < ceil($row_cnt / $num_results_on_page)+1): ?><li class="page"><a href="index.php?page=<?php echo $page+1 ?>#story"><?php echo $page+1 ?></a></li><?php endif; ?>
+                <?php if ($page+2 < ceil($row_cnt / $num_results_on_page)+1): ?><li class="page"><a href="index.php?page=<?php echo $page+2 ?>#story"><?php echo $page+2 ?></a></li><?php endif; ?>
 
                 <?php if ($page < ceil($row_cnt / $num_results_on_page)-2): ?>
                     <li class="dots">...</li>
-                    <li class="end"><a href="index.php?page=<?php echo ceil($row_cnt / $num_results_on_page) ?>"><?php echo ceil($row_cnt / $num_results_on_page) ?></a></li>
+                    <li class="end"><a href="index.php?page=<?php echo ceil($row_cnt / $num_results_on_page) ?>#story"><?php echo ceil($row_cnt / $num_results_on_page) ?></a></li>
                 <?php endif; ?>
 
                 <?php if ($page < ceil($row_cnt / $num_results_on_page)): ?>
-                    <li class="next"><a href="index.php?page=<?php echo $page+1 ?>">Next</a></li>
+                    <li class="next"><a href="index.php?page=<?php echo $page+1 ?>#story">Next</a></li>
                 <?php endif; ?>
             </ul>
                 
@@ -252,6 +251,9 @@
     </div>
 </div>
 
+<div class="footer">
+    <p>© 2020 MambaAndMe. All Rights Reserved.</p>
+</div>
 <script src="js/hearts.js"></script>
 
 </body>

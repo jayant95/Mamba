@@ -4,3 +4,128 @@
         margin-bottom: 1rem;
     }
 }
+
+@media(max-width: 37.1875em) {
+
+    .nav-links li:nth-child(1), .nav-links li:nth-child(3) {
+        border-right: 1px solid rgb(84, 37, 131);
+    }
+
+    .nav-links li:nth-child(1), .nav-links li:nth-child(2) {
+        border-bottom: 1px solid rgb(84, 37, 131);
+    }
+
+    .site-title {
+        border-bottom: 1px solid rgb(84, 37, 131);
+    }
+
+    .top-banner {
+        display: block;
+    }
+}
+
+@media(max-width: 43.875em) {
+    .profile-links {
+        flex: none;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .profile-links li {
+        border: 0;
+    }
+
+    .nav-links {
+        margin: 0;
+    }
+
+    .nav-links li {
+        width: 50%;
+        padding: 1rem 0.5rem;
+        transition: 0.5s;
+    }
+
+    .nav-links a {
+        padding: 1rem 0.5rem;        
+    }
+
+    .nav-links li:hover {
+        border: 1px solid rgb(253, 184, 39);
+    }
+
+    .site-title {
+        flex: 1;
+        text-align: center;
+    }
+
+    .site-title h1 {
+        margin-bottom: 1rem;
+    }
+
+    .welcome-header h1 {
+        font-size: 1.7rem;
+    }
+
+    .welcome-header h3 {
+        font-size: 1rem;
+    }
+
+    .user-story-wrapper {
+        height: 200px;
+    }
+
+    .post-story-btn {
+        height: 100px;
+    }
+
+    .email-contact {
+        margin-bottom: 1rem;
+    }
+
+    .about-container, .story-post {
+        width: 90%;
+        padding: 1.3rem;
+    }
+
+    .story-post.separate-page {
+        width: 90%;
+    }
+
+    .story-content {
+        margin-bottom: 1.5rem;
+    }
+
+    .pagination {
+        width: 100%;
+    }
+    
+    .wrap-login.write-story {
+        width: 90%;
+    }
+}
+
+@media(max-width: 25em) {
+    .profile-links {
+        margin-left: -1rem;
+    }
+}
+
+@media(max-width: 31.25em) {
+    .story-title {
+        display: block;
+    }
+
+    .story-metadata {
+        text-align: left;
+    }
+
+    .story-metadata p {
+        font-size: 0.8rem;
+    }
+}
+
+@media(max-width: 31.9375em) {
+    .top-banner {
+        padding: 0;
+    }
+}
