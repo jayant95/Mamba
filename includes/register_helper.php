@@ -35,7 +35,6 @@ function isExistingUser($data, $connection, $column) {
     $_SESSION['username'] = $user['username'];
     $_SESSION['email'] = $user['email'];
     $_SESSION['memberID'] = getMemberID($user['username'], $connection);
-    $_SESSION['message'] = "Please fill in your measurements to begin your journey!";
   }
 
 
