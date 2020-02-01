@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $siteTitle = "MambaAndMe | Log In";
     require("includes/header.php");
 
     if (isset($_POST['submit'])) {

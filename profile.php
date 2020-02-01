@@ -1,5 +1,6 @@
 <?php
   session_start();
+  $siteTitle = "MambaAndMe | My Profile";
   require("includes/header.php");
   require("includes/db_connection.php");
   require_once("includes/geo_country.php");

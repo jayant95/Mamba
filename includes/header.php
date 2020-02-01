@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>MambaAndMe | Kobe Bryant | Inspirational Short Stories</title>
+    <title><?php echo $siteTitle ?></title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/main.css">

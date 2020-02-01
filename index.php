@@ -1,5 +1,6 @@
 <?php
   session_start();
+  $siteTitle = "MambaAndMe | Kobe Bryant | Inspirational Short Stories";
   require("includes/header.php");
   require_once("includes/db_connection.php");
 
@@ -22,7 +23,7 @@
     <div class="container-login background-image home overlay homepage">
         <div class="wrap-login homepage">
             <div class="welcome-header">
-                <h1>Short stories inspired by Kobe Bryant, from fans around the world.</h1>
+                <h2>Short stories inspired by Kobe Bryant, from fans around the world.</h2>
                 <h3>"Everything negative – pressure, challenges – is all an opportunity for me to rise." - Kobe Bryant</h3>
             </div>
         </div>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+$siteTitle = "MambaAndMe | Write a Story";
 require("includes/header.php");
 
     $data = [];

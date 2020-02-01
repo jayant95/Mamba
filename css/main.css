@@ -348,14 +348,10 @@ ul {
 
 }
   
-.welcome-header h1 {
+.welcome-header h2 {
     font-size: 3rem;
     margin-bottom: 2rem;
     font-family: mambaFont;
-}
-  
-.welcome-header h2 {
-    font-size: 2rem;
 }
   
 .welcome-header h3{

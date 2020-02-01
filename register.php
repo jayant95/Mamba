@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $siteTitle = "MambaAndMe | Sign Up";
     require("includes/header.php");
 
     $user = [];

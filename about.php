@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $siteTitle = "MambaAndMe | How it Works";
     require("includes/header.php");
 ?>
 

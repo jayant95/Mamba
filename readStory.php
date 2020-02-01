@@ -1,6 +1,7 @@
 <?php
 
     session_start();
+    $siteTitle = "MambaAndMe | Read Story";
     require("includes/header.php");
     $storyID = $_GET['storyID'];
 ?>
