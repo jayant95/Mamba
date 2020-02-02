@@ -119,7 +119,7 @@ ul {
     display: flex;
     color: rgb(253, 184, 39);
     background-color: black;
-    border-bottom: 2px solid rgb(84, 37, 131);
+    border-top: 2px solid rgb(84, 37, 131);
 }
 
 .donate-area a {

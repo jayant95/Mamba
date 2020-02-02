@@ -59,14 +59,3 @@
       </ul>
     </nav>
   </div>
-
-  <?php
-    $word = "Foundations";
-    if (strpos($siteTitle, $word) === false) {
-        ?>
-          <div class="donate-area">
-              <a href="donate.php">Donate to Kobe's personal and supported foundations here</a>
-          </div>
-        <?php
-    }
-?>
