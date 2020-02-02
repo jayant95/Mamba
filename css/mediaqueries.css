@@ -130,10 +130,21 @@
     .story-metadata p {
         font-size: 0.8rem;
     }
+
+    .foundation-container {
+        padding: 0;
+    }
 }
 
 @media(max-width: 31.9375em) {
     .top-banner {
         padding: 0;
     }
+}
+
+@media(max-width: 53em) {
+    .story-post.separate-page.foundation-post {
+        width: 100%;
+    }
+
 }

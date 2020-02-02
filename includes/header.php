@@ -45,10 +45,10 @@
         <?php
           // Check if user is logged in
           if (empty($_SESSION['first-name'])) {
-            echo "<li><a href=\"login.php\">Login</a></li>";
-            echo "<li><a href=\"register.php\">Register</a></li>";
-            echo "<li><a href=\"about.php\">How it Works</a></li>";
             echo "<li><a href=\"story.php\">Write a Story</a></li>";
+            echo "<li><a href=\"about.php\">How it Works</a></li>";
+            echo "<li><a href=\"login.php\">Login</a></li>";
+            echo "<li><a href=\"donate.php\">Register</a></li>";
           } else {
             echo "<li><a href=\"profile.php\">Welcome " .$_SESSION['first-name']."</a></li>";
             echo "<li><a href=\"story.php\">Write a Story</a></li>";
@@ -59,3 +59,14 @@
       </ul>
     </nav>
   </div>
+
+  <?php
+    $word = "Foundations";
+    if (strpos($siteTitle, $word) === false) {
+        ?>
+          <div class="donate-area">
+              <a href="donate.php">Donate to Kobe's personal and supported foundations here</a>
+          </div>
+        <?php
+    }
+?>

@@ -10,7 +10,7 @@
             <h2>How it Works</h2>
             <p>
             MambaAndMe is a collection of short stories inspired by Kobe Bryant. Read and share stories you’re interested in, from around the world! <br /><br />
-Simply sign up for an account, then feel free to write your story and send “hearts” to other authors! We invite you to share your story on the influence and impact Kobe and the Mamba Mentality has had on you. 
+            You are able to post your story anonymously or with an account. Feel free to sign up for an account in order to heart other stories from other authors and track your own. The 3 most hearted stories will be shared on the homepage for everyone to read! We invite you to share your story on the influence and impact Kobe and the Mamba Mentality has had on you. 
             </p>
 
             <br />

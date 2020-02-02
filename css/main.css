@@ -54,12 +54,11 @@ ul {
     padding-top: 3rem;
 }
 
-.site-message {
+.site-message, .donate-area {
     text-align: center;
     padding: 0.5rem;
+    background-color:rgb(84, 37, 131);
     color: rgb(253, 184, 39);
-    background-color: black;
-    border-bottom: 2px solid rgb(84, 37, 131);
 }
 
 /* NAV BAR */
@@ -112,6 +111,20 @@ ul {
 .nav-links li {
     padding: 0rem 1rem;
     text-align: inherit;
+}
+
+.donate-area {
+    width:100%;
+    text-align: center;
+    display: flex;
+    color: rgb(253, 184, 39);
+    background-color: black;
+    border-bottom: 2px solid rgb(84, 37, 131);
+}
+
+.donate-area a {
+    font-size: 1.2rem;
+    width: 100%;
 }
 
 
@@ -232,6 +245,10 @@ ul {
 
 .background-image.about-page {
     background-image: url("../img/background_mountains.png");
+}
+
+.background-image.foundation {
+    background-image: url("../img/background_swish.png");
 }
 
 .container-login.story {
@@ -451,7 +468,7 @@ ul {
     margin-bottom: 2rem;
 }
 
-.story-post, .about-container {
+.story-post, .about-container, .foundation-container {
     width: 70%;
     margin: 0 auto;
     border: 2px solid rgb(253, 184, 39);
@@ -697,3 +714,76 @@ ul {
 .prev {
     margin-right: 1rem;
 }
+
+
+/* DONATE.PHP */
+
+.foundation h2 {
+    color: white;
+    display: block;
+    z-index: 2;
+    transform: translate3d(0px, 0px, 1px);
+    width: 100%;
+    text-align: center;
+}
+
+.kobe-charity-section {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.story-post.separate-page.foundation-post {
+    width: 45%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.foundation-container {
+    width: 90%;
+    z-index: 2;
+    transform: translate3d(0px, 0px, 1px);
+    margin: 3rem 0rem;
+    border: none;
+    font-family: NotoSans;
+    line-height: 1.5rem;
+}
+
+.supports-header {
+    margin-top: 4rem;
+}
+
+.foundation-container p {
+    font-family: NotoSans;
+    line-height: 1.5rem; 
+}
+
+.donate-btn:hover {
+    border: 2px solid rgb(253, 184, 39);
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.donate-btn {
+    border-radius: 5px;
+    color: white;
+    transition: 0.3s;
+    background-color: rgb(84, 37, 131);
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height: 60px;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.donate-btn a {
+    font-size: 1.7rem;
+    margin-top: 1.2rem;
+    width: 100%;
+    text-align: center;
+    font-family: mambaFont;
+}
+
+
+
+
