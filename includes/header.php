@@ -19,7 +19,7 @@
     <meta name="twitter:title" content="MambaAndMe | Kobe Bryant | Inspirational Short Stories" />
     <meta name="twitter:description" content="MambaAndMe is a collection of short stories inspired by Kobe Bryant. Read and share stories you’re interested in, from around the world!" />
     <meta name="twitter:image" content="http://mambaandme.com/img/promoteImage.png" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157239014-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -27,7 +27,7 @@
       gtag('js', new Date());
 
       gtag('config', 'UA-157239014-1');
-    </script>
+    </script> -->
   </head>
 
 

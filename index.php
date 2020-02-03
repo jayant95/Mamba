@@ -263,8 +263,14 @@ if (isset($_POST['submit'])) {
     }
   ?>
 <div class="footer">
-    <a href="https://www.instagram.com/mambaandme24/">Instagram</a>
-    <p>© 2020 MambaAndMe. All Rights Reserved.</p>
+    <div class="footer-links">
+        <a href="https://www.instagram.com/mambaandme24/">Instagram</a>
+        <a href="about.php#about">About the Creator</a>
+    </div>
+    <div class="footer-info">
+        <p>Handcoded in Seattle, Washington</p>
+        <p>© 2020 MambaAndMe. All Rights Reserved.</p>
+    </div>
 </div>
 <script src="js/hearts.js"></script>
 

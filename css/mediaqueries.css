@@ -114,6 +114,27 @@
     .set-country-form {
         width: 100%
     }
+
+    .footer-links {
+        width: 80%;
+        justify-content: space-evenly;
+        padding-left: 0;
+        flex: none;
+    }
+
+    .footer-links a {
+        padding-left: 0;
+    }
+
+    .footer-info {
+        text-align: center;
+        display: block;
+        padding-right: 0;
+    }
+
+    .footer-info p {
+        padding-right: 0;
+    }
 }
 
 @media(max-width: 25em) {
