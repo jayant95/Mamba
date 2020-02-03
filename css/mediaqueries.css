@@ -87,6 +87,10 @@
         padding: 1.3rem;
     }
 
+    .all-stories-container {
+        width: 90%;
+    }
+
     .story-post.separate-page {
         width: 90%;
     }

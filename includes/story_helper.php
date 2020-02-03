@@ -31,8 +31,7 @@
         $stmt->close();
         $connection->close();
 
-        $_SESSION['message'] = "Thank you for sharing your story!";
-        header("Location: index.php#story");
+        header("Location: confirmation.php");
     }
 
     function getHeartedStories($storyID, $connection) {

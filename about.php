@@ -15,7 +15,7 @@
 
             <br />
 
-            <h2>Why I created MambaAndMe</h2>
+            <h2 id="about">Why I created MambaAndMe</h2>
 
             <p>
                 Growing up, I loved watching the Lakers. The three-peat from 2000-2002 was amazing. I still remember seeing the Lakers play the Vancouver Grizzlies live in 2001. Admittedly, I cheered for the 

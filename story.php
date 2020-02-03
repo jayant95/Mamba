@@ -42,10 +42,7 @@ require("includes/header.php");
                 $data['username'] = "Anonymous";
             }
 
-
             postStory($data, $connection);
-
-            header("Location: index.php#story");
         }
     }
 

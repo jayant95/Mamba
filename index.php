@@ -4,7 +4,7 @@
   require("includes/header.php");
   require_once("includes/db_connection.php");
 
-  if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) {
     $user['title'] = !empty($_POST['title']) ? $_POST['title'] : "";
     $user['story'] = !empty($_POST['story']) ? $_POST['story'] : "";
 
@@ -16,7 +16,6 @@
       
     }
 }
-  
 ?>
 
 <div class="page-background">
@@ -98,7 +97,7 @@
     
     <div class="story" id="story">
         <div class="story-header">
-            <h2>Stories</h2>
+            <a href="allStories.php"><h2>Stories</h2></a>
         </div>
         <?php  
             // If logged in, retrieve the users hearted stories

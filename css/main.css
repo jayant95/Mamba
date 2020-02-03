@@ -801,5 +801,52 @@ ul {
 }
 
 
+/* ALLSTORIES.PHP */
+
+.story.all-stories {
+    min-height: 80vh;
+}
 
 
+/* CONFIRMATION.PHP */
+
+.story.confirmation-container {
+    background: rgb(84, 37, 131);
+    width: 100%;
+    margin: 0 auto;
+}
+
+.confirmation-content {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.story.most-recent {
+    padding-bottom: 3rem;
+}
+
+.all-stories-container {
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    background-color: rgb(84, 37, 131);
+    border-radius: 10px;
+    justify-content: center;
+    margin-top: 2rem;
+    transition: 0.5s;
+}
+
+.all-stories-container a {
+    text-align: center;
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.all-stories-container:hover {
+    border: 2px solid rgb(253, 184, 39);
+    color: rgb(253, 184, 39);
+}
