@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
     <div class="container-login background-image home overlay homepage">
         <div class="wrap-login homepage">
             <div class="welcome-header">
-                <h2>Short stories inspired by Kobe Bryant, from fans around the world.</h2>
+                <h1>Short stories inspired by Kobe Bryant, from fans around the world.</h1>
                 <h3>"Everything negative – pressure, challenges – is all an opportunity for me to rise." - Kobe Bryant</h3>
             </div>
         </div>
