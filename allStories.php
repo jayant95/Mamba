@@ -55,7 +55,7 @@
                     // $stmt->close();
                 }
 
-                $sql = "SELECT storyID, timestamp, username, title, story, heart, country FROM story ORDER BY timestamp DESC LIMIT ?,?";
+                $sql = "SELECT storyID, timestamp, username, title, story, heart, country, videoID FROM story ORDER BY timestamp DESC LIMIT ?,?";
 
                 if ($stmt = $connection->prepare($sql)) {
                     // Calculate the page to get results
@@ -81,14 +81,16 @@
                     $title = $row['title'];
                     $story = $row['story'];
                     $heart = $row['heart'];
+                    $videoID = $row['videoID'];
                     $storyCountry = $row['country'];
                     $date = date("F j, Y", $time);
                     $storyID = $row['storyID'];
                     $storyDivID = 'story_' . $storyID;
 
                     $shortenedStory = strip_tags($story);
-                            
+                    $overLimit = false;     
                     if (strlen($shortenedStory) > 500) {
+                        $overLimit = true;
                         // truncate string
                         $storyCut = substr($shortenedStory, 0, 500);
                         $endPoint = strrpos($storyCut, ' ');
@@ -115,6 +117,15 @@
                         echo "<div class='story-content'>";
                             echo "<p>" . nl2br($shortenedStory) . "</p>";
                         echo "</div>";
+
+                        if (!empty($videoID) && !$overLimit) {
+                            echo "<div class='video-container'>";
+                                echo "<iframe ";
+                                echo "src= 'https://www.youtube.com/embed/" . $videoID . "'>";
+                                echo "</iframe>";
+                            echo "</div>";
+                        }
+                        
                         echo "<div class='add-heart'>";
                         if (in_array($storyID, $heartedStoriesID)) {
                             echo "<div class='heart-button clicked'>";

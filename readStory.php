@@ -16,7 +16,7 @@
         $heartedStories = [];
         $heartedStoriesID = getHeartedStories($storyID, $connection);
 
-        $sql = "SELECT timestamp, username, title, story, heart, country FROM story WHERE storyID = ?";
+        $sql = "SELECT timestamp, username, title, story, heart, country, videoID FROM story WHERE storyID = ?";
 
         if ($stmt = $connection->prepare($sql)) {
             $stmt->bind_param('i', $storyID);
@@ -34,6 +34,7 @@
                 $storyUser = $row['username'];
                 $storyContent = $row['story'];
                 $storyHeart = $row['heart'];
+                $storyVideo = $row['videoID'];
                 $storyCountry = $row['country'];
                 $date = $row['timestamp'];
                 $storyDate = date("F j, Y", $date);
@@ -58,6 +59,15 @@
                 echo "<div class='story-content'>";
                     echo "<p>" . nl2br($storyContent) . "</p>";
                 echo "</div>";
+
+                if (!empty($storyVideo)) {
+                    echo "<div class='video-container'>";
+                        echo "<iframe ";
+                        echo "src= 'https://www.youtube.com/embed/" . $storyVideo . "'>";
+                        echo "</iframe>";
+                    echo "</div>";
+                }
+
                 echo "<div class='add-heart'>";
                 if (in_array($storyID, $heartedStoriesID)) {
                     echo "<div class='heart-button clicked'>";

@@ -863,3 +863,21 @@ ul {
     border: 2px solid rgb(253, 184, 39);
     color: rgb(253, 184, 39);
 }
+
+.video-container {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+    margin: 1.5rem 0;
+    border-color: black;
+    border-radius: 10px;
+}
+
+.video-container iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}

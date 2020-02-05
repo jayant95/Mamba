@@ -332,7 +332,7 @@
 if (isset($_SESSION['username'])) {
 
     // retrieve and display users posts
-    $sql = "SELECT storyID, timestamp, title, story, heart FROM story WHERE memberID = ?";
+    $sql = "SELECT storyID, timestamp, title, story, heart, videoID FROM story WHERE memberID = ?";
 
     if ($stmt = $connection->prepare($sql)) {
         $stmt->bind_param('i', $_SESSION['memberID']);
@@ -349,6 +349,7 @@ if (isset($_SESSION['username'])) {
             $storyTitle = $row['title'];
             $storyContent = $row['story'];
             $storyHeart = $row['heart'];
+            $storyVideo = $row['videoID'];
             $date = $row['timestamp'];
             $storyID = $row['storyID'];
             $storyDate = date("F j, Y", $date);
@@ -356,10 +357,11 @@ if (isset($_SESSION['username'])) {
             $storyDivID = 'story_' . $storyID;
 
             $shortenedStory = strip_tags($storyContent);
-                        
-            if (strlen($shortenedStory) > 300) {
+            $overLimit = false;
+            if (strlen($shortenedStory) > 400) {
+                $overLimit = true;
                 // truncate string
-                $storyCut = substr($shortenedStory, 0, 300);
+                $storyCut = substr($shortenedStory, 0, 400);
                 $endPoint = strrpos($storyCut, ' ');
 
                 $shortenedStory = $endPoint ? substr($storyCut, 0, $endPoint) : substr($storyCut, 0);
@@ -383,6 +385,15 @@ if (isset($_SESSION['username'])) {
             echo "<div class='story-content'>";
                 echo "<p>" . nl2br($shortenedStory) . "</p>";
             echo "</div>";
+
+            if (!empty($storyVideo) && !$overLimit) {
+                echo "<div class='video-container'>";
+                    echo "<iframe ";
+                    echo "src= 'https://www.youtube.com/embed/" . $storyVideo . "'>";
+                    echo "</iframe>";
+                echo "</div>";
+            }
+
             echo "<div class='add-heart'>";
                 echo "<div class='heart-button clicked'>";
                     echo "<img src='img/heart_clicked.png'>";
