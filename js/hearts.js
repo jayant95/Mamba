@@ -10,7 +10,7 @@ let addHeart = (parentID) => {
     // Set the new number back to the HTML
     heartClass.getElementsByTagName('p')[0].innerHTML = numHearts;
 
-    let heartButton = parentID.children[3].children[0];
+    let heartButton = parentID.getElementsByClassName('heart-button')[0];
     // Remove onclick listener from heart button
     heartButton.onclick = null;
     heartButton.removeChild(heartButton.children[0]);
