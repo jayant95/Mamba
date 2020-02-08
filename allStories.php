@@ -121,7 +121,7 @@
                         if (!empty($videoID) && !$overLimit) {
                             echo "<div class='video-container'>";
                                 echo "<iframe ";
-                                echo "src= 'https://www.youtube.com/embed/" . $videoID . "'>";
+                                echo "src= 'https://www.youtube.com/embed/" . $videoID . "' frameborder='0' allowfullscreen>";
                                 echo "</iframe>";
                             echo "</div>";
                         }

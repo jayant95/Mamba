@@ -96,7 +96,7 @@
                         if (!empty($storyVideo) && !$overLimit) {
                             echo "<div class='video-container'>";
                                 echo "<iframe ";
-                                echo "src= 'https://www.youtube.com/embed/" . $storyVideo . "'>";
+                                echo "src= 'https://www.youtube.com/embed/" . $storyVideo . "' frameborder='0' allowfullscreen>";
                                 echo "</iframe>";
                             echo "</div>";
                         }

@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
     <div class="container-login background-image home overlay homepage">
         <div class="wrap-login homepage">
             <div class="welcome-header">
-                <h1>Short stories inspired by Kobe Bryant, from fans around the world.</h1>
+                <h1>Stories and tributes inspired by Kobe Bryant, from fans around the world.</h1>
                 <h3>"Everything negative – pressure, challenges – is all an opportunity for me to rise." - Kobe Bryant</h3>
             </div>
         </div>
@@ -201,7 +201,7 @@ if (isset($_POST['submit'])) {
                     if (!empty($videoID) && !$overLimit) {
                         echo "<div class='video-container'>";
                             echo "<iframe ";
-                            echo "src= 'https://www.youtube.com/embed/" . $videoID . "'>";
+                            echo "src= 'https://www.youtube.com/embed/" . $videoID . "' frameborder='0' allowfullscreen>";
                             echo "</iframe>";
                         echo "</div>";
                     }
