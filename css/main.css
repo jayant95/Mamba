@@ -881,3 +881,31 @@ ul {
     width: 100%;
     position: absolute;
 }
+
+
+.all-stories-btn {
+    z-index: 2;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    margin-top: -8rem;
+}
+
+.all-stories-btn a {
+    font-size: 1.3rem;
+    border: 5px solid rgb(84, 37, 131);
+    border-radius: 10px;
+    padding: 1rem;
+    color: rgb(253, 184, 39);
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: 0.3s;
+}
+
+
+.all-stories-btn a:hover {
+    background-color: rgb(84, 37, 131);
+}
+
+.all-stories-btn a:active {
+    background-color: rgb(84, 37, 131);
+}

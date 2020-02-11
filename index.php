@@ -23,8 +23,12 @@ if (isset($_POST['submit'])) {
         <div class="wrap-login homepage">
             <div class="welcome-header">
                 <h1>Stories and tributes inspired by Kobe Bryant, from fans around the world.</h1>
-                <h3>"Everything negative – pressure, challenges – is all an opportunity for me to rise." - Kobe Bryant</h3>
+                <h3>Tributes in honor of Kobe Bryant. Share your story today</h3>
             </div>
+        </div>
+
+        <div class="all-stories-btn">
+            <a href="allStories.php">View All Posts</a>
         </div>
     </div>
 
@@ -114,7 +118,7 @@ if (isset($_POST['submit'])) {
             $page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
 
             // Num results to show per page
-            $num_results_on_page = 5;
+            $num_results_on_page = 10;
 
 
            // $start_from = ($pn-1) * $limit;
@@ -254,7 +258,7 @@ if (isset($_POST['submit'])) {
                 <?php endif; ?>
 
                 <?php if ($page < ceil($row_cnt / $num_results_on_page)): ?>
-                    <li class="next"><a href="index.php?page=<?php echo $page+1 ?>#story">Next</a></li>
+                    <li class="next"><a href="allStories.php?page=<?php echo $page+1 ?>">Next</a></li>
                 <?php endif; ?>
             </ul>
                 

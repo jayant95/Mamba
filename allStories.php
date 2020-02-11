@@ -34,7 +34,7 @@
                 $page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
 
                 // Num results to show per page
-                $num_results_on_page = 5;
+                $num_results_on_page = 10;
 
 
             // $start_from = ($pn-1) * $limit;
